@@ -6,7 +6,7 @@ public class PlayerController : MovingCharacter {
 	[SerializeField] private GameObject weaponRotator;
 	private GameObject weaponGameObject;
 	private SpriteRenderer weaponSprite;
-	private IWeapon weapon;
+	//private IWeapon weapon;
 	private Animator playerAnimator;
 
 	private static readonly int IsMoving = Animator.StringToHash("isMoving");
@@ -21,8 +21,9 @@ public class PlayerController : MovingCharacter {
 		base.Start();
 		mainCamera = Camera.main;
 		weaponGameObject = weaponRotator.transform.GetChild(0).gameObject;
-		weapon = weaponGameObject.GetComponent<IWeapon>();
+		//weapon = weaponGameObject.GetComponent<IWeapon>();
 		weaponSprite = weaponGameObject.GetComponent<SpriteRenderer>();
+		Debug.Log(Application.platform.ToString());
 	}
 
 	private void Update() {
@@ -36,8 +37,11 @@ public class PlayerController : MovingCharacter {
 		Body.rotation = Quaternion.Euler(0, isRight?0:180, 0);
 		weaponSprite.flipY = !isRight;
 		weaponRotator.transform.right = mousePosition-(Vector2)weaponRotator.transform.position;
+
+		if (Input.GetMouseButton(0)) {
+			//weapon.OnAttack?.Invoke();
+		}
 		
-		//if (Input.GetMouseButtonDown(0))
 	}
 	
 }
