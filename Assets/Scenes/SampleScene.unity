@@ -183,13 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (11)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -256,13 +253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (7)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -357,13 +351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (1)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -430,13 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (8)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -609,13 +597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (12)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -682,25 +667,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (9)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7899212661922019413, guid: 70f425403669c9d41847230d1003d544, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
-<<<<<<< HEAD
---- !u!1 &946215688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7217584796393723820, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
-  m_PrefabInstance: {fileID: 5083043415372304485}
-=======
 --- !u!4 &929606865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5276193780508289596, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
@@ -792,7 +768,6 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5276193780508289596, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
   m_PrefabInstance: {fileID: 5276193779821697438}
->>>>>>> remotes/origin/dev
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &999866889
 PrefabInstance:
@@ -849,13 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (3)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -927,13 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (6)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1021,7 +990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224217297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.854, y: -0.691, z: 0}
+  m_LocalPosition: {x: 3.9, y: -0.75, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1082,13 +1051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (5)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1249,13 +1215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (2)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1327,13 +1290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (4)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1395,13 +1355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (10)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1617,32 +1574,14 @@ PrefabInstance:
       value: -0.30320126
       objectReference: {fileID: 0}
     - target: {fileID: 5083043415345804022, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
-<<<<<<< HEAD
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 3294442095641557137, guid: 70f425403669c9d41847230d1003d544, type: 3}
-    - target: {fileID: 5083043416576204216, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.3310001
-=======
       propertyPath: m_SortingOrder
       value: 2
->>>>>>> remotes/origin/dev
       objectReference: {fileID: 0}
     - target: {fileID: 5083043415345804023, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5083043416576204217, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
-<<<<<<< HEAD
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8988887882790445153, guid: 70f425403669c9d41847230d1003d544, type: 3}
-    - target: {fileID: 5083043416606734648, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -88769488658099887, guid: 70f425403669c9d41847230d1003d544, type: 3}
-=======
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
@@ -1650,7 +1589,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5083043416606734648, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -1674,9 +1612,6 @@ PrefabInstance:
     - target: {fileID: 6639578811383223505, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
       propertyPath: weaponRotator
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 946215688}
-=======
       objectReference: {fileID: 1024912649}
     - target: {fileID: 7088772484743450280, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
       propertyPath: m_Sprite
@@ -1698,7 +1633,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
 --- !u!1001 &5276193779821697438
@@ -1756,13 +1690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 5276193780508289598, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
->>>>>>> remotes/origin/dev
     - target: {fileID: 5276193780508289599, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
       propertyPath: m_Sprite
       value: 
