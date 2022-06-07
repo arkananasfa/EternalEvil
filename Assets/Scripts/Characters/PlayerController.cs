@@ -1,47 +1,50 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 
-[RequireComponent(typeof(Animator), typeof(Collider2D))]
-public class PlayerController : MovingCharacter {
+public class PlayerController : MonoBehaviour, IController {
 
-	[SerializeField] private GameObject weaponRotator;
-	private GameObject weaponGameObject;
-	private SpriteRenderer weaponSprite;
-	//private IWeapon weapon;
-	private Animator playerAnimator;
-
-	private static readonly int IsMoving = Animator.StringToHash("isMoving");
-	private Camera mainCamera;
+	[SerializeField] private InputSystem inputs;
+	[SerializeField] private GameObject playerGraphics;
 	
-	protected override void Awake() {
-		base.Awake();
-		playerAnimator = GetComponent<Animator>();
+	private Player player { get; set; }
+	private PlayerAttacker attacker { get; set; }
+	private Animator animator { get; set; }
+	
+	private SpriteRenderer weaponSprite { get; set; }
+
+	private bool lookLeft;
+	private readonly int IsMoving = Animator.StringToHash("isMoving");
+
+	private void Awake() {
+		player = GetComponent<Player>();
+		attacker = GetComponent<PlayerAttacker>();
+		animator = GetComponent<Animator>();
 	}
 
-	protected override void Start() {
-		base.Start();
-		mainCamera = Camera.main;
-		weaponGameObject = weaponRotator.transform.GetChild(0).gameObject;
-		//weapon = weaponGameObject.GetComponent<IWeapon>();
-		weaponSprite = weaponGameObject.GetComponent<SpriteRenderer>();
-		Debug.Log(Application.platform.ToString());
+	private void Start() {
+		GameLoopEvents.OnWeaponChosen += SetupWeapon;
+	}
+
+	public void Acting() {
+		
 	}
 
 	private void Update() {
-		float hor = Input.GetAxis("Horizontal");
-		float ver = Input.GetAxis("Vertical");
-		Velocity = new Vector2(hor, ver)*Speed*Time.fixedDeltaTime;
-		playerAnimator.SetBool(IsMoving, Velocity!=Vector2.zero);
-		Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-
-		bool isRight = mousePosition.x > transform.position.x;
-		Body.rotation = Quaternion.Euler(0, isRight?0:180, 0);
-		weaponSprite.flipY = !isRight;
-		weaponRotator.transform.right = mousePosition-(Vector2)weaponRotator.transform.position;
-
-		if (Input.GetMouseButton(0)) {
-			//weapon.OnAttack?.Invoke();
-		}
-		
+		player.Velocity = inputs.movingVector;
+		animator.SetBool(IsMoving , player.Velocity != Vector2.zero);
+		attacker.WeaponParent.transform.right = inputs.attackingVector;
+		lookLeft = inputs.attackingVector.x < 0;
+		playerGraphics.transform.right = new Vector2(lookLeft ? -1 : 1, 0);
+		if (weaponSprite != null) 
+			weaponSprite.flipY = lookLeft;
 	}
-	
+
+	private void SetupWeapon(AbstractWeapon weapon) {
+		weaponSprite = weapon.transform.GetComponent<SpriteRenderer>();
+	}
+
+	private void FixedUpdate() {
+		player.Move();
+	}
+
 }

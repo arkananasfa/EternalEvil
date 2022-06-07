@@ -1,0 +1,24 @@
+﻿{
+  "Items" : [
+    {
+      "Name": "Pistol",
+      "Level": 1
+    },
+    {
+      "Name": "Sword",
+      "Level": 1
+    },
+    {
+      "Name": "Daggers",
+      "Level": 1
+    },
+    {
+      "Name": "Radiance",
+      "Level": 2
+    },
+    {
+      "Name": "HellStick",
+      "Level": 3
+    }
+  ]
+}

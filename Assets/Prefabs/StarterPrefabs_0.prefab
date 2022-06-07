@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6453780257039051895}
   - component: {fileID: 6347797660662529100}
   - component: {fileID: 5144640137550588989}
-  - component: {fileID: 8131666697598616460}
+  - component: {fileID: 5704572493388354074}
   m_Layer: 0
   m_Name: StarterPrefabs_0
   m_TagString: Untagged
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &8131666697598616460
+--- !u!114 &5704572493388354074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,9 +109,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 863994080867542428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab11b6d7b3102a14ea5878f79b1537f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9668696853a0bf045a13b84d03c126a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layersToInteract:
-    serializedVersion: 2
-    m_Bits: 1280
+  _name: Pistol's bullet
+  speed: 100
