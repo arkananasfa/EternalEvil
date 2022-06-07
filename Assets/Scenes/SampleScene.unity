@@ -306,6 +306,50 @@ PrefabInstance:
       objectReference: {fileID: 7899212661922019413, guid: 70f425403669c9d41847230d1003d544, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff78c389cb0b0d144a573a4bb185017b, type: 3}
+--- !u!1 &354830785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354830787}
+  - component: {fileID: 354830786}
+  m_Layer: 0
+  m_Name: WeaponFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &354830786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354830785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff518322f6a797429ad2a0b95a11bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewWeaponParent: {fileID: 354830787}
+--- !u!4 &354830787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354830785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &395778649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,7 +708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e682a8c1dd2ac4080dd66511f9e3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChooseWindow: {fileID: 0}
+  ChooseWindowPrefab: {fileID: -8048062883254304176, guid: 578fae3776d74c848bd242a601c3aa28, type: 3}
+  factory: {fileID: 354830786}
 --- !u!114 &814034679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1113,11 @@ PrefabInstance:
 --- !u!1 &1024912649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7217584796393723820, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
+  m_PrefabInstance: {fileID: 5083043415372304485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1024912650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8416806252708875742, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
   m_PrefabInstance: {fileID: 5083043415372304485}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1074543096
@@ -1978,6 +2028,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7133490090796310580, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
+      propertyPath: WeaponParent
+      value: 
+      objectReference: {fileID: 1024912650}
     - target: {fileID: 7217584796393723820, guid: 1f5860e88b0362941be36cd730056fb8, type: 3}
       propertyPath: m_Layer
       value: 6
