@@ -32,6 +32,7 @@ public abstract class AbstractWeapon : MonoBehaviour, IWeapon {
 	}
 
 	protected virtual ChooseWindowRow SpeedPenaltyRow() {
+		if (Mass == 0) return new ChooseWindowRow("No speed penalties");
 		return new ChooseWindowRow($"Speed penalty: -{Mass}%");
 	}
 }

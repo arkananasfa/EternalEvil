@@ -9,7 +9,7 @@ public class Daggers : AbstractThrownWeapon {
 		AttackRange = 200;
 		ReloadTime = 200;
 		Damage = 8;
-		BasePosition = new Vector2(0.6f, 0f);
+		BasePosition = new Vector2(0.4f, 0f);
 	}
 	
 }

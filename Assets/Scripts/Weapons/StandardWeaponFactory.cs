@@ -14,7 +14,7 @@ public class StandardWeaponFactory : MonoBehaviour, IWeaponFactory {
 	}
 
 	public AbstractWeapon GetWeapon(string name) {
-		return Instantiate((GameObject)Resources.Load("Weapons\\Pistol"), NewWeaponParent).GetComponent<AbstractWeapon>();
+		return Instantiate((GameObject)Resources.Load("Weapons\\"+name), NewWeaponParent).GetComponent<AbstractWeapon>();
 	}
 
 	public AbstractWeapon GetRandomWeapon(int currentLevel) {

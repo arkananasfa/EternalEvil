@@ -21,7 +21,7 @@ public class StandardWeaponChooseMenu : MonoBehaviour, IWeaponChooseMenu {
 		GameLoopEvents.OnWeaponChosen -= DestroyWindows;
 	}
 
-	private int round = 1;//testing variant
+	private int round = 3;//testing variant
 	public void CreateMenu() {
 		List<string> addedWeapons = new List<string>();
 		for (int i = 0; i < 3; i++) {
