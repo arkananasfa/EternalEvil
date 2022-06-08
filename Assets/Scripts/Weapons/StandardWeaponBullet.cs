@@ -31,6 +31,8 @@ public class StandardWeaponBullet : MonoBehaviour, IBullet, IDescribable {
 				other.GetComponent<AbstractCharacter>().GetDamage(Damage);
 				Destroy(gameObject);
 				break;
+			case ObjectsLayers.Player :
+				break;
 			default:
 				Destroy(gameObject);
 				break;
@@ -38,8 +40,11 @@ public class StandardWeaponBullet : MonoBehaviour, IBullet, IDescribable {
 	}
 
 	public IEnumerator Fly() {
-		while (true)
-			transform.Translate(transform.right*Speed);
+		float secondsDelay = 0.02f;
+		while (true) {
+			transform.Translate(transform.right * Speed * secondsDelay, Space.World);
+			yield return new WaitForSeconds(secondsDelay);
+		}
 	}
 
 	private void Death() {

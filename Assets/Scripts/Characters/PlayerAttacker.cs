@@ -9,8 +9,9 @@ public class PlayerAttacker : MonoBehaviour, IAttackable {
         GameLoopEvents.OnWeaponChosen += ApplyWeapon;
     }
 
-    public bool Attack() {
-        return weapon.Attack();
+    public void Attack() {
+        if (weapon != null)
+            weapon.Attack();
     }
 
     private void ApplyWeapon(AbstractWeapon newWeapon) {

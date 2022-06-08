@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7730798269989881290}
   - component: {fileID: 9185141586086925243}
   m_Layer: 6
-  m_Name: HellStick
+  m_Name: Hell stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

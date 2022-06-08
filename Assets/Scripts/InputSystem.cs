@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour {
 
-	public bool isAndroid;
-	
-	public Vector2 movingVector;
-	public Vector2 attackingVector;
+	public Vector2 movingVector { get; set; }
+	public Vector2 attackingVector { get; set; }
+	public bool IsAttacking { get; set; }
 
 	private Camera mainCamera;
 	private Transform player;
@@ -22,8 +21,9 @@ public class InputSystem : MonoBehaviour {
 			movingVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 			Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 			attackingVector = mousePosition - (Vector2)player.position;
+			IsAttacking = Input.GetMouseButton(0);
 		} else {
-			// Take movement from joysticks
+			// Take control from joysticks
 		}
 	}
 

@@ -9,6 +9,6 @@ public interface IWeapon : IDescribable{
 	float Damage { get; set; }
 	Vector2 BasePosition { get; set; }
 
-	bool Attack();
+	void Attack();
 
 }

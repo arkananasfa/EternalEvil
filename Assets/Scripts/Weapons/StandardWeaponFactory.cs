@@ -23,10 +23,10 @@ public class StandardWeaponFactory : MonoBehaviour, IWeaponFactory {
 		return GetWeapon(available[rand].Name);
 	}
 
-	public AbstractWeapon GetRandomWeapon(int currentLevel, List<string> alreadyChoosen) {
+	public AbstractWeapon GetRandomWeapon(int currentLevel, List<AbstractWeapon> alreadyChoosen) {
 		List<WeaponType> available = Types.Where(i => i.Level <= currentLevel).Where(i => {
 			foreach (var j in alreadyChoosen) 
-				if (i.Name == j) return false;
+				if (i.Name == j.Name) return false;
 			return true;
 		}).ToList();
 		int rand = Random.Range(0, available.Count());

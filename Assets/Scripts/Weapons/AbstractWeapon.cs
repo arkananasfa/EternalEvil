@@ -11,13 +11,29 @@ public abstract class AbstractWeapon : MonoBehaviour, IWeapon {
 	public float ReloadTime { get; set; }
 	public float Damage { get; set; }
 	public Vector2 BasePosition { get; set; }
-	
-	public abstract bool Attack();
+
+	public bool IsReloaded { get; protected set; }
+	public bool IsAttacking { get; protected set; }
+	protected virtual float realReloadTime {
+		get => 100f / ReloadTime;
+	}
+
+	public virtual void Attack() {
+		if (!IsReloaded) return;
+		IsReloaded = false;
+		Invoke(nameof(Reload), realReloadTime);
+	}
 
 	protected Sprite sprite;
 	
 	protected virtual void Awake() {
 		sprite = GetComponent<SpriteRenderer>().sprite;
+		IsReloaded = true;
+		IsAttacking = false;
+	}
+
+	protected virtual void Reload() {
+		IsReloaded = true;
 	}
 
 	public virtual List<ChooseWindowRow> GenerateDescribe() {

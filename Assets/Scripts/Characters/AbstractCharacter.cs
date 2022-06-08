@@ -13,25 +13,24 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 	public IAttackable Attacker { get; set; }
 	public IController Controller { get; set; }
 
-	public Vector2 Velocity { get; set; }
-	
-	public UnityEvent OnDeath { get; set; }
-	public UnityEvent<float> OnGetDamage { get; set; }
+	public Vector2 Velocity {
+		get => rb.velocity;
+		set => rb.velocity = value.normalized*Speed;
+	}
+
+	public event Action OnDeath;
+	public event Action<float> OnGetDamage;
 
 	protected Rigidbody2D rb;
 
 	protected virtual void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 	}
-
-	public virtual void Move() {
-		rb.velocity = Velocity.normalized*Speed;
-	}
 	
 	public virtual void GetDamage(float damage) {
 		HP -= damage;
 		OnGetDamage?.Invoke(damage);
-		if (HP < 0) Death();
+		if (HP <= 0) Death();
 	}
 	
 	public virtual void Death() {

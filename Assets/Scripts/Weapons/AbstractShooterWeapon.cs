@@ -6,16 +6,20 @@ public abstract class AbstractShooterWeapon : AbstractWeapon {
 	[SerializeField] protected StandardWeaponBullet BulletPrefab;
 	[SerializeField] protected Transform BulletStart;
 
-	public override bool Attack() {
+	public override void Attack() {
+		if (!IsReloaded) return;
+		IsReloaded = false;
+		Invoke(nameof(Reload), realReloadTime);
 		StandardWeaponBullet bullet = CreateBullet();
 		bullet.Init();
-		return true;
 	}
 
 	protected virtual StandardWeaponBullet CreateBullet() {
-		StandardWeaponBullet bullet = Instantiate(BulletPrefab, BulletStart.position, transform.rotation);
+		StandardWeaponBullet bullet = Instantiate(BulletPrefab, BulletStart.position, Quaternion.identity, transform);
 		bullet.LifeTime = AttackRange / bullet.Speed;
 		bullet.Damage = Damage;
+		bullet.transform.localRotation = Quaternion.Euler(0, 0, 0);
+		bullet.transform.parent = null;
 		return bullet;
 	}
 
