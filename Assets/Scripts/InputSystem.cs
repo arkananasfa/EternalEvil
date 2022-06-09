@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputSystem : MonoBehaviour {
@@ -9,7 +10,13 @@ public class InputSystem : MonoBehaviour {
 	private Camera mainCamera;
 	private Transform player;
 	private UIManager UI;
-	
+
+	public static InputSystem Instance;
+
+	private void Awake() {
+		Instance = this;
+	}
+
 	private void Start() {
 		mainCamera = Camera.main;
 		player = Player.Instance.transform;

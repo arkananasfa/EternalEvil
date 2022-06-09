@@ -2,10 +2,10 @@ using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IController {
-
-	[SerializeField] private InputSystem inputs;
+	
 	[SerializeField] private GameObject playerGraphics;
 	
+	private InputSystem inputs;
 	private Player player { get; set; }
 	private PlayerAttacker attacker { get; set; }
 	private Animator animator { get; set; }
@@ -22,15 +22,23 @@ public class PlayerController : MonoBehaviour, IController {
 		animator = GetComponent<Animator>();
 	}
 
-	private void Start() {
+	private void OnEnable() {
 		GameLoopEvents.OnWeaponChosen += SetupWeapon;
+	}
+
+	private void Start() {
+		inputs = InputSystem.Instance;
+	}
+
+	private void OnDisable() {
+		GameLoopEvents.OnWeaponChosen -= SetupWeapon;
 	}
 
 	public void Acting() {
 		
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		player.Velocity = inputs.movingVector;
 		animator.SetBool(IsMoving , player.Velocity != Vector2.zero);
 		lookLeft = inputs.attackingVector.x < 0;

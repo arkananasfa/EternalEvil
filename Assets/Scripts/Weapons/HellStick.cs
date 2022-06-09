@@ -6,9 +6,9 @@ public class HellStick : AbstractLazerWeapon {
 		base.Awake();
 		Name = "Hell stick";
 		Mass = 20;
-		AttackRange = 80;
-		ReloadTime = 0;
-		Damage = 12;
+		AttackRange = 6;
+		ReloadTime = 2000;
+		Damage = 16;
 		BasePosition = new Vector2(0f, 0f);
 	}
 	

@@ -28,7 +28,7 @@ public class StandardWeaponBullet : MonoBehaviour, IBullet, IDescribable {
 	protected virtual void OnTriggerEnter2D(Collider2D other) {
 		switch ((ObjectsLayers)other.gameObject.layer) {
 			case ObjectsLayers.Enemie :
-				other.GetComponent<AbstractCharacter>().GetDamage(Damage);
+				other.GetComponent<IHP>().GetDamage(Damage);
 				Destroy(gameObject);
 				break;
 			case ObjectsLayers.Player :

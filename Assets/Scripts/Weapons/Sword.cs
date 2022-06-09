@@ -42,6 +42,6 @@ public class Sword : AbstractMeleeWeapon {
 		LayerMask mask = LayerMask.GetMask("Enemies");
 		Collider2D[] results = Physics2D.OverlapCircleAll(DamageCenter.position, AttackRange, mask);
 		foreach (var collider in results) 
-			collider.GetComponent<AbstractCharacter>().GetDamage(Damage);
+			collider.GetComponent<IHP>().GetDamage(Damage);
 	}
 }

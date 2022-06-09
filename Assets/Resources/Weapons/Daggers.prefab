@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1768372660554390161}
   - component: {fileID: 7318319973351046868}
   - component: {fileID: 1213305336946313631}
+  - component: {fileID: 5124226384623076002}
   m_Layer: 6
   m_Name: Daggers
   m_TagString: Untagged
@@ -95,3 +96,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99244226dbc13bb47ad027fd910c89ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &5124226384623076002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204264469474506117}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.022597969, y: 0.36156434}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.42710334, y: 0.14201552}
+    oldSize: {x: 0.31, y: 1.01}
+    newSize: {x: 0.28, y: 0.19428572}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.31, y: 1.01}
+  m_EdgeRadius: 0

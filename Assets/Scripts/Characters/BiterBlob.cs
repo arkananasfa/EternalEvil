@@ -12,20 +12,14 @@ public class BiterBlob : AbstractCharacter {
 
 	private void OnEnable() {
 		OnGetDamage += uSuka;
-		OnDeath += BLIAAAAAAAAA;
 	}
 
 	private void uSuka(float f) {
-		Debug.Log($"u suka, {f} urona, {HP} hp");
-	}
-
-	private void BLIAAAAAAAAA() {
-		Debug.Log("Blyaaaaaaaa");
+		Debug.Log($"{f}/{HP}");
 	}
 
 	private void OnDisable() {
 		OnGetDamage -= uSuka;
-		OnDeath -= BLIAAAAAAAAA;
 	}
 
 }

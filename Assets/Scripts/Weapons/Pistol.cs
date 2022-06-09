@@ -6,9 +6,9 @@ public class Pistol : AbstractShooterWeapon {
 		base.Awake();
 		Name = "Pistol";
 		Mass = 10;
-		AttackRange = 100;
+		AttackRange = 10;
 		ReloadTime = 100;
-		Damage = 10;
+		Damage = 10f;
 		BasePosition = new Vector2(0.5f, 0f);
 	}
 
