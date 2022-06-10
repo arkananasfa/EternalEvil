@@ -4,11 +4,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IController {
 	
 	[SerializeField] private GameObject playerGraphics;
+	[SerializeField] private Transform WeaponParent;
 	
 	private InputSystem inputs;
-	private Player player { get; set; }
-	private PlayerAttacker attacker { get; set; }
+	private ICharacter player { get; set; }
+	private IAttackable attacker { get; set; }
 	private Animator animator { get; set; }
+	public Transform Target { get; set; }
 	
 	private Transform weaponTransform { get; set; }
 
@@ -17,8 +19,8 @@ public class PlayerController : MonoBehaviour, IController {
 	private readonly int IsMoving = Animator.StringToHash("isMoving");
 
 	private void Awake() {
-		player = GetComponent<Player>();
-		attacker = GetComponent<PlayerAttacker>();
+		player = GetComponent<ICharacter>();
+		attacker = GetComponent<IAttackable>();
 		animator = GetComponent<Animator>();
 	}
 
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour, IController {
 	private void OnDisable() {
 		GameLoopEvents.OnWeaponChosen -= SetupWeapon;
 	}
-
+	
 	public void Acting() {
 		
 	}
@@ -44,9 +46,9 @@ public class PlayerController : MonoBehaviour, IController {
 		lookLeft = inputs.attackingVector.x < 0;
 		
 		if (weaponTransform == null) return;
-		if (!attacker.weapon.IsAttacking) {
+		if (!attacker.IsAttacking) {
 			playerGraphics.transform.right = new Vector2(lookLeft ? -1 : 1, 0);
-			attacker.WeaponParent.transform.right = inputs.attackingVector;
+			WeaponParent.right = inputs.attackingVector;
 			if (lookLeft != weaponLeft) {
 				weaponTransform.Rotate(180, 0, 0);
 				weaponLeft = lookLeft;

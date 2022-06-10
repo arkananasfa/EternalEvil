@@ -23,6 +23,7 @@ public class Player : AbstractCharacter
 		Velocity = new Vector2();
 		Speed = 3;
 		baseSpeed = Speed;
+		BaseHP = 100;
 		HP = 100;
 		GameLoopEvents.GameStart();
 	}

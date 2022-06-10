@@ -1,10 +1,27 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour, IAttackable {
 
     public Transform WeaponParent;
-    public AbstractWeapon weapon { get; private set; }
+    private AbstractWeapon weapon { get; set; }
+
+    public Transform Target { get; set; }
+    public float Damage {
+        get => weapon.Damage;
+        set => weapon.Damage = value;
+    }
+    public float AttackRange {
+        get => weapon.AttackRange;
+        set => weapon.AttackRange = value;
+    }
+    public float ReloadTime {
+        get => weapon.ReloadTime;
+        set => weapon.ReloadTime = value;
+    }
+    
+    public bool IsAttacking { get => weapon.IsAttacking; }
+    public bool IsReloaded { get => weapon.IsReloaded; }
 
     private void Awake() {
         GameLoopEvents.OnWeaponChosen += ApplyWeapon;
