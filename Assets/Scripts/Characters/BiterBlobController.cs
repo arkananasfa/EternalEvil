@@ -5,7 +5,7 @@ public class BiterBlobController : AbstractEnemyController {
 
 	private void Start() {
 		desiredDistance = 2f;
-		distanceToAttack = 2.5f;
+		distanceToAttack = 2.25f;
 	}
 
 }

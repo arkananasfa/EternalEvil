@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(AbstractCharacter))]
 public abstract class AbstractEnemyAttacker : MonoBehaviour, IAttackable {
 
 	public Transform Target { get; set; }
-	
+
 	public float Damage { get; set; }
 	public float AttackRange { get; set; }
 	public float ReloadTime { get; set; }
@@ -14,8 +13,9 @@ public abstract class AbstractEnemyAttacker : MonoBehaviour, IAttackable {
 	public abstract void Attack();
 
 	protected float timeToAttack;
+	protected Vector3 ToTargetVector => Target.position - transform.position;
 
-	private void Awake() {
+	protected virtual void Awake() {
 		IsReloaded = true;
 		IsAttacking = false;
 	}

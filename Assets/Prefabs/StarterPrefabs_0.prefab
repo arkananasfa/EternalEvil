@@ -112,5 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9668696853a0bf045a13b84d03c126a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Pistol's bullet
-  speed: 10
+  speed: 15
+  bulletName: Pistol bullet

@@ -24,7 +24,7 @@ public class Player : AbstractCharacter
 		Speed = 3;
 		baseSpeed = Speed;
 		BaseHP = 100;
-		HP = 100;
+		HP = BaseHP;
 		GameLoopEvents.GameStart();
 	}
 

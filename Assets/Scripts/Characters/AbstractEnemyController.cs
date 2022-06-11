@@ -28,13 +28,12 @@ public class AbstractEnemyController : MonoBehaviour, IController {
 		while (true) {
 			if (!attacker.IsAttacking) {
 				float distance = Distance;
-				Debug.Log(distance);
 				if (distance <= distanceToAttack && attacker.IsReloaded)
 					attacker.Attack();
 				if (distance >= desiredDistance)
 					character.Velocity = Target.position - transform.position;
 				yield return SpecialBehaviour();
-			}
+			} else character.Velocity = Vector2.zero;
 			yield return new WaitForSeconds(timeDelay);
 		}
 	}

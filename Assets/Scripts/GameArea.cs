@@ -12,7 +12,7 @@ public class GameArea : MonoBehaviour {
     }
 
     private float timeDelay = 0.1f;
-    private int maxSteps = 250;
+    private int maxSteps = 500;
 
     private void SetCollider() {
         PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
@@ -30,7 +30,7 @@ public class GameArea : MonoBehaviour {
 
     private IEnumerator ReduceSize() {
         for (int i = 0; i < maxSteps; i++) {
-            transform.localScale -= Vector3.one / 500;
+            transform.localScale -= Vector3.one / 1000;
             yield return new WaitForSeconds(timeDelay);
         }
     }
