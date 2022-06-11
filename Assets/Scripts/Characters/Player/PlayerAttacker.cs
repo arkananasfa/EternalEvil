@@ -20,8 +20,8 @@ public class PlayerAttacker : MonoBehaviour, IAttackable {
         set => weapon.ReloadTime = value;
     }
     
-    public bool IsAttacking { get => weapon.IsAttacking; }
-    public bool IsReloaded { get => weapon.IsReloaded; }
+    public bool IsAttacking => weapon.IsAttacking;
+    public bool IsReloaded => weapon.IsReloaded;
 
     private void Awake() {
         GameLoopEvents.OnWeaponChosen += ApplyWeapon;

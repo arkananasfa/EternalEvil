@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGraphics: {fileID: 5213099481117595906}
+  WeaponParent: {fileID: 8416806252708875742}
 --- !u!114 &7133490090796310580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60dfe51e1a2111147b68cddbd25a9cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponParent: {fileID: 0}
+  WeaponParent: {fileID: 8416806252708875742}
 --- !u!114 &3544448584764322012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20632b29a09bf640a09d723d4e55758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseHp: 100
+  speed: 4
+  power: 0
 --- !u!1 &5083043415345804023
 GameObject:
   m_ObjectHideFlags: 0

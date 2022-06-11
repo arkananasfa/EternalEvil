@@ -9,13 +9,6 @@ public class TrollAttacker : AbstractRangedEnemyAttacker {
 		animator = GetComponent<Animator>();
 	}
 
-	private void Start() {
-		Damage = 15f;
-		AttackRange = 8f;
-		ReloadTime = 2f;
-		timeToAttack = 0f;
-	}
-
 	public override void Attack() {
 		base.Attack();
 		animator.SetBool(attacking, true);
@@ -23,6 +16,7 @@ public class TrollAttacker : AbstractRangedEnemyAttacker {
 
 	public override void Throw() {
 		base.Throw();
+		IsAttacking = false;
 		animator.SetBool(attacking, false);
 	}
 

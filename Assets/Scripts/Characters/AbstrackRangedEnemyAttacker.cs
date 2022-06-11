@@ -18,7 +18,6 @@ public abstract class AbstractRangedEnemyAttacker : AbstractEnemyAttacker {
 		projectile.Damage = Damage;
 		projectile.LifeTime = AttackRange/projectile.Speed;
 		projectile.Init();
-		IsAttacking = false;
 		Invoke(nameof(Reload), ReloadTime);
 	}
 

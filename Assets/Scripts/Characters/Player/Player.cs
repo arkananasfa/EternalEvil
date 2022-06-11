@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(PlayerController), typeof(PlayerAttacker))]
-public class Player : AbstractCharacter
+public class Player : StandardCharacter
 {
 
 	public static Player Instance;
@@ -11,21 +11,13 @@ public class Player : AbstractCharacter
 	private float baseSpeed;
 
 	protected override void Awake() {
+		base.Awake();
 		Instance = this;
-		rb = GetComponent<Rigidbody2D>();
+		baseSpeed = Speed;
 	}
 
 	private void OnEnable() {
 		GameLoopEvents.OnWeaponChosen += ChangeSpeedByWeapon;
-	}
-
-	private void Start() {
-		Velocity = new Vector2();
-		Speed = 3;
-		baseSpeed = Speed;
-		BaseHP = 100;
-		HP = BaseHP;
-		GameLoopEvents.GameStart();
 	}
 
 	private void Update() {

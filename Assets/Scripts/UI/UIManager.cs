@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
 		GameLoopEvents.OnGameLost += ShowLoseScreen;
 	}
 
+	private void Start() {
+		GameLoopEvents.GameStart();
+	}
+
 	public void ShowLoseScreen() {
 		Debug.Log("You Lose");	
 	}

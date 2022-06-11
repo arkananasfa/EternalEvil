@@ -5,9 +5,6 @@ using UnityEngine;
 public class BiterBlobAttacker : AbstractEnemyAttacker {
 
 	private void Start() {
-		Damage = 5f;
-		AttackRange = 2.3f;
-		ReloadTime = 1.0f;
 		timeToAttack = 0.2f;
 	}
 	

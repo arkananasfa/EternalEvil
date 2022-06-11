@@ -177,8 +177,8 @@ GameObject:
   - component: {fileID: 2543699918414528651}
   - component: {fileID: 2543699918414528692}
   - component: {fileID: 2543699918414528693}
-  - component: {fileID: 2543699918414528694}
-  - component: {fileID: 2543699918414528695}
+  - component: {fileID: 4399320887875910418}
+  - component: {fileID: 3667425462197867483}
   m_Layer: 8
   m_Name: BlueTroll
   m_TagString: Untagged
@@ -280,9 +280,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c903cf76603e4d9d312578394933a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  attackRange: 7
+  reloadTime: 3
   ProjectilePrefab: {fileID: 4789459949356474884, guid: 649039d3770abb340be5b0371042d28b, type: 3}
   ProjectileStart: {fileID: 7276913031913852561}
---- !u!114 &2543699918414528694
+--- !u!114 &4399320887875910418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,10 +294,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2543699918414528689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b6f7894e1a5e24297b248ed2ef7fe2, type: 3}
+  m_Script: {fileID: 11500000, guid: 151e8285d7f7f2541a90a33db572d078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2543699918414528695
+  distanceToAttack: 6
+  desiredDistance: 4
+--- !u!114 &3667425462197867483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,9 +308,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2543699918414528689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b1c5e42e84ea642bd7189291c075c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 66965b43df3d3b5499dae9db1af8110d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseHp: 150
+  speed: 2
+  power: 10
 --- !u!1 &3887491368036808630
 GameObject:
   m_ObjectHideFlags: 0

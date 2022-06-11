@@ -9,11 +9,15 @@ public class Sword : AbstractMeleeWeapon {
 	protected override void Awake() {
 		base.Awake();
 		Name = "Sword";
-		Mass = 15;
-		AttackRange = 0.8f;
-		ReloadTime = 120;
-		Damage = 20;
+		Mass = 10;
+		AttackRange = 1.2f;
+		ReloadTime = 200;
+		Damage = 25;
 		BasePosition = new Vector2(0.2f, 0f);
+	}
+
+	private void OnDrawGizmos() {
+		Gizmos.DrawWireSphere(DamageCenter.position, 1.2f);
 	}
 
 	protected override IEnumerator AttackProcess() {
@@ -39,9 +43,13 @@ public class Sword : AbstractMeleeWeapon {
 	}
 
 	protected override void DealDamage() {
-		LayerMask mask = LayerMask.GetMask("Enemies");
+		LayerMask mask = LayerMask.GetMask("Enemies", "EnemyBullets");
 		Collider2D[] results = Physics2D.OverlapCircleAll(DamageCenter.position, AttackRange, mask);
-		foreach (var collider in results) 
-			collider.GetComponent<IHP>().GetDamage(Damage);
+		foreach (var collider in results) {
+			if (collider.gameObject.layer == (int)ObjectsLayers.Enemie)
+				collider.GetComponent<IHP>().GetDamage(Damage);
+			else
+				Destroy(collider.gameObject);
+		}
 	}
 }

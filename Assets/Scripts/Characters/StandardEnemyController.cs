@@ -1,22 +1,31 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(AbstractCharacter), typeof(IAttackable))]
-public class AbstractEnemyController : MonoBehaviour, IController {
+[RequireComponent(typeof(StandardCharacter), typeof(IAttackable))]
+public class StandardEnemyController : MonoBehaviour, IController {
 	
 	public Transform Target { get; set; }
-	
-	protected float distanceToAttack { get; set; }
-	protected float desiredDistance { get; set; }
+
+	[SerializeField] private float distanceToAttack;
+	[SerializeField] private float desiredDistance;
+
+	protected float DistanceToAttack {
+		get => distanceToAttack;
+		set => distanceToAttack = value;
+	}
+	protected float DesiredDistance {
+		get => desiredDistance;
+		set => desiredDistance = value;
+	}
 	protected float timeDelay { get; set; }
 	protected virtual float Distance { get => (transform.position - Target.position).magnitude; }
 
 	private IAttackable attacker;
-	private AbstractCharacter character;
+	private StandardCharacter character;
 	
 	protected virtual void Awake() {
 		attacker = GetComponent<IAttackable>();
-		character = GetComponent<AbstractCharacter>();
+		character = GetComponent<StandardCharacter>();
 		timeDelay = 0.1f;
 	}
 
@@ -28,9 +37,9 @@ public class AbstractEnemyController : MonoBehaviour, IController {
 		while (true) {
 			if (!attacker.IsAttacking) {
 				float distance = Distance;
-				if (distance <= distanceToAttack && attacker.IsReloaded)
+				if (distance <= DistanceToAttack && attacker.IsReloaded)
 					attacker.Attack();
-				if (distance >= desiredDistance)
+				if (distance >= DesiredDistance)
 					character.Velocity = Target.position - transform.position;
 				yield return SpecialBehaviour();
 			} else character.Velocity = Vector2.zero;

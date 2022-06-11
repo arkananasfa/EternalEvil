@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4850495096707595448}
   - component: {fileID: 2659438293113692041}
   - component: {fileID: 4789459949356474884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrollStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
