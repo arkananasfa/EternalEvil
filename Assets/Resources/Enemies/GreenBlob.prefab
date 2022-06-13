@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHp: 80
-  speed: 1.2
+  baseSpeed: 1.5
   power: 2
 --- !u!114 &8951757464707293714
 MonoBehaviour:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17c911919038884f8b008f20de56779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   attackRange: 8
   reloadTime: 1
   ProjectilePrefab: {fileID: 1106406548533496600, guid: 39f5febfc1cd7db4e817dc6485833d19, type: 3}

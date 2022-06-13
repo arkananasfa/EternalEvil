@@ -8,16 +8,14 @@ public class Player : StandardCharacter
 
 	public static Player Instance;
 
-	private float baseSpeed;
-
 	protected override void Awake() {
 		base.Awake();
 		Instance = this;
-		baseSpeed = Speed;
 	}
 
 	private void OnEnable() {
 		GameLoopEvents.OnWeaponChosen += ChangeSpeedByWeapon;
+		GameLoopEvents.OnRoundEnded += RestoreHP;
 	}
 
 	private void Update() {
@@ -27,6 +25,7 @@ public class Player : StandardCharacter
 
 	private void OnDisable() {
 		GameLoopEvents.OnWeaponChosen -= ChangeSpeedByWeapon;
+		GameLoopEvents.OnRoundEnded -= RestoreHP;
 	}
 
 	public override void Death() {
@@ -34,7 +33,12 @@ public class Player : StandardCharacter
 	}
 
 	private void ChangeSpeedByWeapon(AbstractWeapon weapon) {
-		Speed = baseSpeed - baseSpeed * (weapon.Mass / 100);
+		Speed = BaseSpeed - BaseSpeed * (weapon.Mass / 100);
+	}
+
+	private void RestoreHP() {
+		HP = BaseHP;
+		GetDamage(0);
 	}
 
 }

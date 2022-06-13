@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHp: 50
-  speed: 2
+  baseSpeed: 2
   power: 1
 --- !u!1001 &514862655347513711
 PrefabInstance:

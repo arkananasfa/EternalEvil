@@ -1,6 +1,6 @@
 using System;
 
-public class GameLoopEvents {
+public static class GameLoopEvents {
 
 	/// <summary>
 	/// Create weapon choose menu

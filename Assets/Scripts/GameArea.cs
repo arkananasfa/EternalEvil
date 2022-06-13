@@ -3,17 +3,27 @@ using System.Collections;
 using UnityEngine;
 
 public class GameArea : MonoBehaviour {
+    
+    private Vector3 startSize;
+    private readonly float timeDelay = 0.1f;
+    private readonly int maxSteps = 600;
 
-    private EdgeCollider2D edgeCollider;
+    private IEnumerator reduceSize;
 
     private void Awake() {
         SetCollider();
-        StartCoroutine(ReduceSize());
     }
 
-    private float timeDelay = 0.1f;
-    private int maxSteps = 600;
+    private void OnEnable() {
+        GameLoopEvents.OnRoundStarted += ReduceSize;
+        GameLoopEvents.OnRoundEnded += RestoreSize;
+    }
 
+    private void OnDisable() {
+        GameLoopEvents.OnRoundStarted -= ReduceSize;
+        GameLoopEvents.OnRoundEnded -= RestoreSize;
+    }
+    
     private void SetCollider() {
         PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
         if (poly == null) {
@@ -23,16 +33,27 @@ public class GameArea : MonoBehaviour {
         Vector2[] points = new Vector2[len + 1];
         for (int i = 0; i < len; i++) points[i] = poly.points[i];
         points[len] = points[0];
-        edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+        EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
         edgeCollider.points = points;
+        startSize = transform.localScale;
         Destroy(poly);
     }
 
-    private IEnumerator ReduceSize() {
+    private void ReduceSize() {
+        reduceSize = ReduceSizeRoutine();
+        StartCoroutine(reduceSize);
+    }
+    
+    private IEnumerator ReduceSizeRoutine() {
         for (int i = 0; i < maxSteps; i++) {
             transform.localScale -= Vector3.one / 800;
             yield return new WaitForSeconds(timeDelay);
         }
+    }
+
+    private void RestoreSize() {
+        StopCoroutine(reduceSize);
+        transform.localScale = startSize;
     }
 
     private void OnCollisionEnter(Collision other) {

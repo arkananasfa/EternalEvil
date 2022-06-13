@@ -1,0 +1,16 @@
+﻿{
+  "Items" : [
+    {
+      "Name": "BiterBlob",
+      "Power": 1
+    },
+    {
+      "Name": "GreenBlob",
+      "Power": 3
+    },
+    {
+      "Name": "Troll",
+      "Power": 10
+    }
+  ]
+}

@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4399320887875910418}
   - component: {fileID: 3667425462197867483}
   m_Layer: 8
-  m_Name: BlueTroll
+  m_Name: Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHp: 150
-  speed: 2
+  baseSpeed: 1.5
   power: 10
 --- !u!1 &3887491368036808630
 GameObject:

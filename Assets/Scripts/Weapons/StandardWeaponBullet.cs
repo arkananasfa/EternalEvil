@@ -33,7 +33,7 @@ public class StandardWeaponBullet : AbstractBullet, IDescribable {
 		describeList.Add(new ChooseWindowRow(sprite, bulletName));
 		describeList.Add(new ChooseWindowRow($"Damage : {Damage}"));
 		describeList.Add(new ChooseWindowRow($"Speed: {Speed}"));
-		describeList.Add(new ChooseWindowRow($"Life time: {LifeTime}"));;
+		describeList.Add(new ChooseWindowRow($"Life time: {Math.Round(LifeTime, 2)}"));;
 		return describeList;
 	}
 }

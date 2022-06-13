@@ -1,22 +1,21 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class StandardCharacter : MonoBehaviour, ICharacter
 {
 	
 	[SerializeField] private float baseHp;
-	[SerializeField] private float speed;
+	[SerializeField] private float baseSpeed;
 	[SerializeField] private float power;
 	
 	public float BaseHP {
 		get => baseHp;
 		set => baseHp = value;
 	}
-	public float Speed {
-		get => speed;
-		set => speed = value;
+	public float BaseSpeed {
+		get => baseSpeed;
+		set => baseSpeed = value;
 	}
 	public float Power {
 		get => power;
@@ -24,6 +23,7 @@ public class StandardCharacter : MonoBehaviour, ICharacter
 	}
 	
 	public float HP { get; set; }
+	public float Speed { get; set; }
 	public IAttackable Attacker { get; set; }
 	public IController Controller { get; set; }
 
@@ -55,6 +55,7 @@ public class StandardCharacter : MonoBehaviour, ICharacter
 
 	protected virtual void Start() {
 		HP = BaseHP;
+		Speed = BaseSpeed;
 		Target = Player.Instance.transform;
 		Controller.Acting();
 	}
@@ -70,6 +71,4 @@ public class StandardCharacter : MonoBehaviour, ICharacter
 		Destroy(gameObject);
 	}
 
-	
-	
 }

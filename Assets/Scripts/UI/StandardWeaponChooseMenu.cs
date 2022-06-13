@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 public class StandardWeaponChooseMenu : MonoBehaviour, IWeaponChooseMenu {
 
 	[SerializeField] private ChooseWindow ChooseWindowPrefab;
+	[SerializeField] private RoundConfig roundConfig;
 	[SerializeField] private StandardWeaponFactory factory;
 	
 	private List<GameObject> windows = new List<GameObject>();
@@ -21,12 +22,10 @@ public class StandardWeaponChooseMenu : MonoBehaviour, IWeaponChooseMenu {
 		GameLoopEvents.OnPerkChosen -= CreateMenu;
 		GameLoopEvents.OnWeaponChosen -= Clear;
 	}
-
-	private int round = 3;//testing variant
+	
 	public void CreateMenu() {
-		
-		for (int i = 0; i < 3; i++) {
-			AbstractWeapon weapon = factory.GetRandomWeapon(round, weapons);
+		for (int i = 0; i < PerksBonuses.WeaponsCountToChoose; i++) {
+			AbstractWeapon weapon = factory.GetRandomWeapon(roundConfig.RoundsNumber, weapons);
 			ChooseWindow window = Instantiate(ChooseWindowPrefab, Vector3.zero, Quaternion.identity, transform);
 			windows.Add(window.gameObject);
 

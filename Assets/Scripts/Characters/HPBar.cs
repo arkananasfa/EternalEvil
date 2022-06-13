@@ -22,11 +22,11 @@ public class HPBar : MonoBehaviour {
 	}
 
 	public void UpdateHP(float lostHP) {
-		float dif = lostHP / owner.BaseHP;
+		float dif = owner.HP/owner.BaseHP;
 		contentRenderer.enabled = true;
 		backRenderer.enabled = true;
-		HPBarContent.localScale -= new Vector3(dif, 0, 0);
-		HPBarContent.localPosition -= new Vector3(dif / 2, 0, 0);
+		HPBarContent.localScale = new Vector3(dif, 1, 0);
+		HPBarContent.localPosition = new Vector3(dif/2f-0.5f, 0, 0);
 		if (HPBarContent.localScale.x < 0) {
 			HPBarContent.localScale = Vector3.zero;
 		}
