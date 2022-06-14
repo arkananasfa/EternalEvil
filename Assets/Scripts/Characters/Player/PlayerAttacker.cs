@@ -5,6 +5,7 @@ public class PlayerAttacker : MonoBehaviour, IAttackable {
 
     public Transform WeaponParent;
     private AbstractWeapon weapon { get; set; }
+    private AbstractWeapon oldWeapon { get; set; }
 
     public Transform Target { get; set; }
     public float Damage {
@@ -23,8 +24,14 @@ public class PlayerAttacker : MonoBehaviour, IAttackable {
     public bool IsAttacking => weapon.IsAttacking;
     public bool IsReloaded => weapon.IsReloaded;
 
-    private void Awake() {
+    private void OnEnable() {
         GameLoopEvents.OnWeaponChosen += ApplyWeapon;
+        GameLoopEvents.OnRoundEnded += TrashOldWeapon;
+    }
+
+    private void OnDisable() {
+        GameLoopEvents.OnWeaponChosen -= ApplyWeapon;
+        GameLoopEvents.OnRoundEnded -= TrashOldWeapon;
     }
 
     public void Attack() {
@@ -32,13 +39,20 @@ public class PlayerAttacker : MonoBehaviour, IAttackable {
             weapon.Attack();
     }
 
+    private void TrashOldWeapon() {
+        Destroy(weapon.gameObject);
+    }
+
     private void ApplyWeapon(AbstractWeapon newWeapon) {
-        if (weapon!=null) Destroy(weapon.gameObject);
         weapon = newWeapon;
         Transform weaponTransform = weapon.transform;
         weaponTransform.parent = WeaponParent;
         weaponTransform.localPosition = weapon.BasePosition;
         weaponTransform.localRotation = Quaternion.Euler(0, 0, 0);
+        float parentRotation = WeaponParent.localRotation.eulerAngles.z;
+        if (parentRotation >= 90 || parentRotation <= -90) {
+            weaponTransform.Rotate(180, 0, 0);
+        }
     }
     
 }

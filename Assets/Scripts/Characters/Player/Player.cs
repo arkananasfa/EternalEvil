@@ -30,6 +30,8 @@ public class Player : StandardCharacter
 
 	public override void Death() {
 		GameLoopEvents.LoseGame();
+		Camera.main.transform.parent = null;
+		Destroy(gameObject);
 	}
 
 	private void ChangeSpeedByWeapon(AbstractWeapon weapon) {

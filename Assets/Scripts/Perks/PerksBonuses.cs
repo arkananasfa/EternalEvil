@@ -8,7 +8,7 @@ public static class PerksBonuses {
 	public static void UpgradeWeapon(AbstractWeapon weapon) {
 		weapon.Damage *= BonusDamage;
 		weapon.AttackRange *= BonusAttackRange;
-		weapon.ReloadTime *= BonusAttackRange;
+		weapon.ReloadTime *= BonusReloadTime;
 	}
 
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class StandardEnemiesFactory : MonoBehaviour, IEnemiesFactory {
 
 	[SerializeField] private RoundConfig round;
+	[SerializeField] private EnemiesGroup enemies;
 	private List<EnemiesType> Types { get; set; }
 
 	protected virtual void Awake() {
@@ -17,8 +18,10 @@ public class StandardEnemiesFactory : MonoBehaviour, IEnemiesFactory {
 		StandardCharacter enemy = ((GameObject)Resources.Load("Enemies\\" + name)).GetComponent<StandardCharacter>();
 		enemy = Instantiate(enemy).GetComponent<StandardCharacter>();
 		round.UpgradeEnemy(enemy);
-		EnemiesGroup.AddCharacter();
-		enemy.OnDeath += EnemiesGroup.RemoveCharacter;
+		enemies.AddCharacter(enemy);
+		enemy.OnDeath += () => {
+			enemies.RemoveCharacter(enemy);
+		};
 		return enemy;
 	}
 	

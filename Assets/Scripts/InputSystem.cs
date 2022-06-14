@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour {
 
+	[SerializeField] private Joystick moveJoystick;
+	[SerializeField] private Joystick attackJoystick;
+	
 	public Vector2 movingVector { get; set; }
 	public Vector2 attackingVector { get; set; }
 	public bool IsAttacking { get; set; }
@@ -15,6 +18,14 @@ public class InputSystem : MonoBehaviour {
 
 	private void Awake() {
 		Instance = this;
+	}
+
+	private void OnEnable() {
+		GameLoopEvents.OnGameLost += GameLost;
+	}
+
+	private void OnDisable() {
+		GameLoopEvents.OnGameLost -= GameLost;
 	}
 
 	private void Start() {
@@ -30,8 +41,14 @@ public class InputSystem : MonoBehaviour {
 			attackingVector = mousePosition - (Vector2)player.position;
 			IsAttacking = Input.GetMouseButton(0);
 		} else {
-			// Take control from joysticks
+			movingVector = moveJoystick.Direction;
+			attackingVector = attackJoystick.Direction;
+			IsAttacking = attackJoystick.Direction != Vector2.zero;
 		}
+	}
+
+	private void GameLost() {
+		player = transform;
 	}
 
 }

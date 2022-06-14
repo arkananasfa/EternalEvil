@@ -12,8 +12,8 @@ public abstract class AbstractWeapon : MonoBehaviour, IWeapon {
 	public float Damage { get; set; }
 	public Vector2 BasePosition { get; set; }
 
-	public bool IsReloaded { get; protected set; }
-	public bool IsAttacking { get; protected set; }
+	public bool IsReloaded { get; set; }
+	public bool IsAttacking { get; set; }
 	protected virtual float realReloadTime {
 		get => 100f / ReloadTime;
 	}

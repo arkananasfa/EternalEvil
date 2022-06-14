@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameArea : MonoBehaviour {
     
     private Vector3 startSize;
-    private readonly float timeDelay = 0.1f;
+    private readonly float timeDelay = 0.2f;
     private readonly int maxSteps = 600;
 
     private IEnumerator reduceSize;
